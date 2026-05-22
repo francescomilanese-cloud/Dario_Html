@@ -414,6 +414,8 @@
   <em> Root,1979 - Shahrokh,1954 - Shahrokh,2002 - Wasmuth,2019 </em></footer>
 
 <script>
+const GITHUB_RAW = 'https://raw.githubusercontent.com/francescomilanese-cloud/Dario_Html/main/';
+
 const DATA = [
   {
     label:"Testa Mancante",
@@ -537,8 +539,9 @@ function open(id) {
   const imagesSection = document.getElementById('pImages');
   if (d.images && d.images.length > 0) {
     let imagesHTML = '<div class="sec-label">Immagini Analitiche</div><div class="images-gallery">';
-    d.images.forEach(img => {
-      imagesHTML += `<div class="image-thumb" onclick="openModal('${img}')"><img src="${img}" alt=""></div>`;
+    d.images.forEach(imgName => {
+      const imgUrl = GITHUB_RAW + encodeURIComponent(imgName);
+      imagesHTML += `<div class="image-thumb" onclick="openModal('${imgUrl}')"><img src="${imgUrl}" alt=""></div>`;
     });
     imagesHTML += '</div>';
     imagesSection.innerHTML = imagesHTML;
