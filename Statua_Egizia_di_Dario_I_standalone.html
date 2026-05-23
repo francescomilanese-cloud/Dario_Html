@@ -68,6 +68,11 @@
   .statue-wrapper {
     position: relative;
     height: min(76vh, 660px);
+    background: linear-gradient(135deg, rgba(201,168,76,0.1) 0%, rgba(201,168,76,0.05) 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .statue-wrapper img {
     height: 100%;
@@ -86,7 +91,7 @@
     transform: translate(-50%, -50%);
     transition: background .2s, box-shadow .2s, border-color .2s;
     z-index: 20;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
   }
@@ -369,7 +374,14 @@
 <div class="main">
   <div class="statue-col">
     <div class="statue-wrapper" id="sw">
-      <img id="si" alt="Statua egizia di Dario I" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAYGBgYHBgcICAcKCwoLCg8ODAwODxYQERAREBYiFRkVFRkVIh4kHhweJB42KiYmKjY+NDI0PkxERExfWl98f" alt="Placeholder">
+      <svg width="200" height="400" viewBox="0 0 200 400" style="opacity: 0.6;">
+        <rect x="60" y="20" width="80" height="100" fill="none" stroke="#c9a84c" stroke-width="2"/>
+        <circle cx="100" cy="50" r="35" fill="none" stroke="#c9a84c" stroke-width="2"/>
+        <rect x="40" y="120" width="120" height="180" fill="none" stroke="#c9a84c" stroke-width="2"/>
+        <rect x="30" y="300" width="30" height="80" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+        <rect x="140" y="300" width="30" height="80" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+        <text x="100" y="200" font-family="Cinzel" font-size="12" fill="#c9a84c" text-anchor="middle" opacity="0.5">DARIO I</text>
+      </svg>
 
       <div class="hotspot" data-id="0" data-xpct="42" data-ypct="5">
         <div class="hotspot-ring"></div><div class="hotspot-dot"></div>
@@ -435,56 +447,56 @@ const DATA = [
     label: "Testa Mancante",
     title: "La Testa — Ipotesi Ricostruttive",
     sub: "Identità regale tra canone persiano e faraonismo egizio",
-    text: "La statua è acefala: la testa originale è perduta, il che rende difficile comprendere appieno il significato del monumento. Le ipotesi ricostruttive si dividono tra una testa di Dario raffigurato secondo il canone persiano tradizionale o un volto scolpito secondo il modello faraonico egizio.",
-    tags: ["Ricostruzione iconografica","Corona egizia / testa persiana","Distruzione Volontaria?"],
+    text: "",
+    tags: [],
     images: []
   },
   {
     label: "Iscrizioni",
-    title: "Atti di Cancellazione Simbolica",
+    title: "Atti di cancellazione simbolica",
     sub: "Scalfiture deliberate sulle iscrizioni",
-    text: "Scalfiture rinvenute esclusivamente sulle iscrizioni geroglifiche: sia quella sul lato della veste sia quella sulla superficie superiore della base. Il cartiglio che racchiudeva il nome di Dario e l'attributo 'vivrà per sempre' porta evidenti segni di attacco deliberato e simbolico, testimonianza di un tentativo di cancellazione della memoria regale.",
-    tags: ["Plurilinguismo","Cancellazione simbolica","Propaganda imperiale","Damnatio memoriae"],
+    text: "Scalfiture solo sulle iscrizioni geroglifiche (entrambe quella sul lato della veste e sulla superficie superiore della base) e limitatamente al cartiglio che racchiudeva il nome di Dario e l'attributo \"vivrá per sempre\"",
+    tags: ["Cancellazione simbolica","Iscrizioni geroglifiche","Damnatio memoriae"],
     images: []
   },
   {
     label: "Segni di distruzione",
-    title: "Danneggiamenti Antropici — Cronologia e Interpretazioni",
-    sub: "Secondo la linea cronologica di Razmjou",
-    text: "ATTI VANDALICI PSEUDO-SIMBOLICI:\nNumerosi colpi di freccia e spada, piccoli, estremamente circoscritti e sterili alla compromissione della solidità della statua.\n\nATTI DI ROTTURA NON SIMBOLICI:\nTagli e incisioni lungo l'intera lunghezza della manica del braccio sinistro; scalfiture lungo l'orlo della manica del braccio destro all'altezza del bacino, culminanti con la parziale rottura della mano destra; incisioni lungo il pilastro portante (back pillar) su cui poggia la statua.\n\nLA RESISTENZA DEL MATERIALE:\nLa particolare resistenza del granito ne ha consentito la conservazione nonostante i vari tentativi di distruzione, costituendo un fattore di discrimine nel destino che subirono tutte le altre statue del Palazzo Reale, di cui non rimangono che lacerti.",
-    tags: ["Danneggiamento intenzionale","Atti di distruzione","Conservazione eccezionale","Granito"],
+    title: "Danneggiamenti antropici",
+    sub: "Secondo la linea cronologica tracciata dalle interpretazioni di Razmjou",
+    text: "Atti vandalici pseudo-simbolici: numerosi colpi di freccia e spada, piccoli, estremamente circoscritti e sterili alla compromissione della solidità della statua\n\nAtti di cancellazione simbolica: scalfiture solo sulle iscrizioni geroglifiche (entrambe quella sul lato della veste e sulla superficie superiore della base) e limitatamente al cartiglio che racchiudeva il nome di Dario e l'attributo \"vivrá per sempre\"\n\nAtti di rottura non simbolici:\n— tagli/incisioni lungo l'intera lunghezza della manica del braccio sinistro\n— scalfiture lungo l'orlo della manica del braccio destro all'altezza del bacino: culminanti con la parziale rottura della mano destra\n— incisioni lungo il pilastro portante (back pillar) su cui poggia la statua\n\nLa particolare resistenza del materiale della statua ne ha consentito la conservazione nonostante i vari tentativi di distruzione e ha costituito un fattore di discrimine nel destino che subirono tutte le altre statue del Palazzo Reale, di cui non rimangono che lacerti",
+    tags: ["Vandalismo","Distruzione intenzionale","Granito","Conservazione"],
     images: []
   },
   {
     label: "Attributi persiani",
-    title: "Sincresi Egizia e Persiana",
+    title: "Sincretismo Egizia e Persiana",
     sub: "Simbolismo della rappresentazione duale",
-    text: "La statua rappresenta il primo caso documentato di sincretismo iconografico tra il canone egizio e persiano. Dario I, sovrano dell'Impero Achemenide, sceglie di farsi rappresentare non solo con iscrizioni in geroglifico, ma adottando la tipologia e gli attributi della statuaria egizia. Gli elementi persiani si integrano nel tessuto visivo egizio, creando una complessa narrazione di dominio, legittimazione e continuità.",
-    tags: ["Sincretismo culturale","Rappresentazione del potere","Imperialismo","Tematica duale"],
+    text: "",
+    tags: ["Sincretismo","Rappresentazione del potere"],
     images: []
   },
   {
     label: "Braccio Destro",
-    title: "Fratture e Rotture — Evoluzione Della Distruzione",
-    sub: "Dal vandalismo sistematico al collasso strutturale",
-    text: "SCALFITURE SULLA MANICA E ROTTURA DELLA MANO:\nScarfiture lungo l'orlo della manica del braccio destro all'altezza del bacino, culminanti nella parziale rottura della mano destra.\n\nLE DUE GRANDI FRATTURE DIAGONALI E PARALLELE:\nUna collocata subito sotto le ginocchia, l'altra segna la separazione della parte superiore all'altezza del bacino. Entrambe le fratture corrono dalla parte frontale al retro della statua.\n\nTEORIA DELLA LEVA E INCLINAZIONE:\nSecondo Razmjou, la statua sarebbe stata inclinata tramite una leva in un momento in cui era ancora integra, poggiante sulla parete del gate. La nuova posizione, inclinata indietro e pressata contro il muro dalla leva, l'avrebbe esposta maggiormente alle pressioni esercitate dall'alto e dal retro, ponendola in condizione di estrema precarietà.",
-    tags: ["Fratture diagonali","Rottura della mano","Pressione strutturale","Teoria della leva"],
+    title: "Le due grandi fratture",
+    sub: "Dinamica delle rotture diagonali",
+    text: "Tracciano due linee diagonali e parallele: una collocata subito sotto le ginocchia, l'altra segna la separazione della parte superiore all'altezza del bacino.\n\nEntrambe le fratture corrono dalla parte frontale al retro della statua.\n\nRotture così nette sul granito possono essere state prodotte solo da forme di enorme pressione circoscritta.",
+    tags: ["Fratture diagonali","Pressione strutturale","Granito"],
     images: []
   },
   {
     label: "Bibliografia",
-    title: "Fonti Documentali",
-    sub: "Riferimenti principali e interpretazioni critiche",
-    text: "Root, 1979 - Shahrokh, 1954 - Shahrokh, 2002 - Wasmuth, 2019\n\nInterpretazioni storiche sulla statua di Dario I e i meccanismi di distruzione attraverso i secoli.",
-    tags: ["Archeologia","Susa","Achemenidi","Iconografia"],
+    title: "Fonti documentali",
+    sub: "Interpretazioni delle fratture",
+    text: "Azione umana:\n— L'uomo avrebbe potuto esercitare tale pressione solo tramite strumenti come l'ariete o simili\n— La superficie delle zone di rottura non presenta traccia dell'impiego di ariete\n— La statua non può essere stata colpita da dietro perchè con ogni probabilità, prima dell'inizio del processo di interramento si trovava ancora in situ, contro la parete del gate\n— La statua non può essere stata colpita di lato perché si sarebbe rovesciata prima che rotta (e la parte inferiore non sarebbe rimasta nella posizione originaria)\n— Colpi assettati frontalente avrebbero provocato la pressione della statua contro il muro, senza causa danni significativi",
+    tags: ["Teorie di distruzione","Ariete","Pressione strutturale"],
     images: []
   },
   {
     label: "Basamento",
-    title: "Il Collasso Strutturale e Il Destino Della Statua",
-    sub: "Dalla frammentazione al seppellimento e preseravazione",
-    text: "DINAMICA DEL COLLASSO:\nIl collasso strutturale del gate del Palazzo Reale acuì irreversibilmente la pressione sulla parte superiore della statua, causandone la rottura definitiva. Al momento della prima frattura (sotto le ginocchia), la statua scivolò maggiormente in avanti e verso il basso, aumentando ulteriormente l'angolo di appoggio contro il muro e dunque l'esercizio di pressione dello stesso.\n\nSEPPELLIMENTO E PRESERVAZIONE:\nIl collasso della struttura seppellì e preservò i due terzi inferiori della statua, i quali rimasero insieme per via di una dinamica di rottura più 'fortunata'. La parte superiore, in seguito alla rottura, si sfilò definitivamente e andò incontro, con ogni probabilità, ad un destino di reimpiego in ambito edilizio, per quanto il suo percorso non sia più ricostruibile.",
-    tags: ["Collasso strutturale","Seppellimento","Preservazione","Reimpiego edilizio"],
+    title: "Teoria di Razmjou",
+    sub: "Dal collasso strutturale al seppellimento",
+    text: "Viene assoldata l'idea che la statua sia stata inclinata tramite una leva, in un momento in cui questa era ancora integra e poggiante sulla parete del gate.\n\nLa nuova posizione della statua, ovvero inclinata indietro e pressata ulteriormente contro il muro dalla leva, l'avrebbe esposta maggiormente alle pressioni esercitate dall'alto e dal retro dal muro retrostante, ponendola in una condizione di estrema precarietà e fragilità.\n\nAl momento della prima rottura (sotto le ginocchia), la statua sarebbe scivolata maggiormente in avanti e verso il basso, aumentando ulteriormente l'angolo di appoggio contro il muro e dunque l'esercizio di pressione di quest'ultimo.\n\nIn seguito, il collasso strutturale del gate del Palazzo Reale avrebbe acuito irreversibilmente la pressione sulla parte superiore della statua, causandone la rottura.\n\nIl collasso della struttura andò così a seppellire (e preservare) i due terzi inferiori della statua, i quali, per via di una dinamica di rottura più \"fortunata\" rimasero insieme.\n\nLa parte superiore, in seguito alla rottura, si sfilò definitivamente e andò incontro, con ogni probabilità, ad un destino di reimpiego in ambito edilizio, per quanto il suo percorso non sia più ricostruibile.",
+    tags: ["Teoria della leva","Collasso strutturale","Seppellimento","Precarietà"],
     images: []
   }
 ];
